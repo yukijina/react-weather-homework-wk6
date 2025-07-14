@@ -1,0 +1,23 @@
+.Form {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.Form input {
+  font-size: 1.8rem;
+}
+
+.Form-textbox {
+  padding: 0.5rem;
+  width: 20rem;
+  height: 4rem;
+  margin-right: 0.5rem;
+}
+
+.Form-search {
+  padding: 1rem 1.2em;
+  border: none;
+  background-color: #3d74b6;
+  color: #fdfdfd;
+  border-radius: 5px;
+}
