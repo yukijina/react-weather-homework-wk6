@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import './Form.css';
 import axios from 'axios';
+import './Form.css';
+import Weather from './Weather';
 
-export default function Form() {
-  const [city, setCity] = useState('New York');
-  const [data, setData] = useState({});
+export default function Form({ defaultCity }) {
+  const [city, setCity] = useState(defaultCity);
+  const [data, setData] = useState({ loaded: false });
 
   function showWeather(response) {
     const dt = response.data;
     setData({
+      loaded: true,
       city: dt.city,
       condition: dt.condition.description,
       icon: dt.condition.icon_url,
@@ -26,17 +28,28 @@ export default function Form() {
     setCity(event.target.value);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function fetchData() {
     const apiKey = '2f5896dd4cc0cdo340203tba4fba205f';
     const url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios.get(url).then(showWeather);
   }
 
-  return (
-    <form className='Form' onSubmit={handleSubmit}>
-      <input type='text' className='Form-textbox' onChange={handleChange} />
-      <input type='submit' value='Search' className='Form-search' />
-    </form>
-  );
+  function handleSubmit(event) {
+    event.preventDefault();
+    fetchData();
+  }
+
+  if (!data.loaded) {
+    fetchData();
+  } else {
+    return (
+      <div className='Form'>
+        <form onSubmit={handleSubmit}>
+          <input type='text' className='Form-textbox' onChange={handleChange} />
+          <input type='submit' value='Search' className='Form-search' />
+        </form>
+        <Weather data={data} />
+      </div>
+    );
+  }
 }

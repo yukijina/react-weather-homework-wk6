@@ -6,7 +6,7 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-heading-1'>Weather App</h1>
-        <Form />
+        <Form defaultCity='New York' />
       </header>
     </div>
   );
