@@ -15,12 +15,11 @@ export default function Form({ defaultCity }) {
       condition: dt.condition.description,
       icon: dt.condition.icon_url,
       country: dt.country,
-      temperature: dt.temperature.current,
+      temperature: Math.round(dt.temperature.current),
       humidity: dt.temperature.humidity,
-      time: dt.time,
+      timestamp: dt.time,
       wind: dt.wind.speed,
     });
-    console.log(data);
   }
 
   function handleChange(event) {

@@ -1,0 +1,28 @@
+.Weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Weather-heading--2 {
+  font-size: 3rem;
+}
+
+.Weather-unit {
+  color: #dc3c22;
+}
+
+.Weather-col--right {
+  display: flex;
+  align-items: center;
+}
+
+.Weather-temperature {
+  font-size: 6rem;
+  font-weight: 800;
+}
+
+.Weather-temperature-unit {
+  font-weight: 400;
+  vertical-align: top;
+}
