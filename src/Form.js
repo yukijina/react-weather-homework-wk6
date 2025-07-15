@@ -27,7 +27,7 @@ export default function Form({ defaultCity }) {
     setCity(event.target.value);
   }
 
-  function fetchData() {
+  function fetchWeather() {
     const apiKey = '2f5896dd4cc0cdo340203tba4fba205f';
     const url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios.get(url).then(showWeather);
@@ -35,11 +35,11 @@ export default function Form({ defaultCity }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    fetchData();
+    fetchWeather();
   }
 
   if (!data.loaded) {
-    fetchData();
+    fetchWeather();
   } else {
     return (
       <div className='Form'>
