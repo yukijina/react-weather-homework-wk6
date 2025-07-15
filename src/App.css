@@ -6,3 +6,8 @@
   font-size: 4rem;
   text-align: center;
 }
+
+p,
+span {
+  font-size: 1.6rem;
+}
