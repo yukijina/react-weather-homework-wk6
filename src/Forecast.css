@@ -1,0 +1,25 @@
+.Forecast {
+  display: flex;
+  margin-top: 5rem;
+}
+
+.Forecast-day {
+  text-align: center;
+  color: #969696;
+  font-weight: 700;
+}
+
+.Forecast-temperature {
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+}
+
+.Forecast-temperature--max {
+  color: #dc3c22;
+  margin-right: 0.8rem;
+}
+
+.Forecast-temperature--min {
+  color: rgba(220, 59, 34, 0.603);
+}

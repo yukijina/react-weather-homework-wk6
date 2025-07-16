@@ -2,27 +2,27 @@ import React from 'react';
 
 export default function FormattedTime({ timestamp }) {
   const date = new Date(timestamp * 1000);
-  console.log(date);
+
   const days = [
     'Monday',
     'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday',
-    'Saturday',
+    'Satday',
     'Sunday',
   ];
 
-  const hours = date.getHours();
-  let minutes = date.getMinutes();
-  minutes = minutes < 10 ? `0${minutes}` : minutes;
-  let unit = hours < 12 ? 'am' : 'pm';
-
   const day = days[date.getDay()];
+  const hours = date.getHours();
+  const unformattedMinutes = date.getMinutes();
+  const minutes =
+    unformattedMinutes < 10 ? `0${unformattedMinutes}` : unformattedMinutes;
+  const unit = hours < 12 ? 'am' : 'pm';
 
   return (
     <span>
-      {day} {`${hours}:${minutes} ${unit}`},
+      {day} {`${hours}:${minutes} ${unit}`},{' '}
     </span>
   );
 }
