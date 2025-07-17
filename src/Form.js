@@ -7,8 +7,8 @@ import Forecast from './Forecast';
 export default function Form({ defaultCity }) {
   const [city, setCity] = useState(defaultCity);
   const [data, setData] = useState({ loaded: false });
-  const [forecast, setForecast] = useState([]);
   const apiKey = '2f5896dd4cc0cdo340203tba4fba205f';
+  const [coordinates, setCoorinates] = useState({});
 
   function showWeather(response) {
     const dt = response.data;
@@ -23,20 +23,16 @@ export default function Form({ defaultCity }) {
       timestamp: dt.time,
       wind: dt.wind.speed,
     });
-  }
 
-  function showForecast(response) {
-    setForecast(response.data.daily);
+    setCoorinates({
+      lon: dt.coordinates.longitude,
+      lat: dt.coordinates.latitude,
+    });
   }
 
   function fetchWeather() {
     const url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios.get(url).then(showWeather);
-  }
-
-  function fetchForecast() {
-    const url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
-    axios.get(url).then(showForecast);
   }
 
   function handleChange(event) {
@@ -51,7 +47,6 @@ export default function Form({ defaultCity }) {
 
   if (!data.loaded) {
     fetchWeather();
-    fetchForecast();
   } else {
     return (
       <main className='Form'>
@@ -60,7 +55,7 @@ export default function Form({ defaultCity }) {
           <input type='submit' value='Search' className='Form-search' />
         </form>
         <Weather data={data} />
-        <Forecast data={forecast} />
+        <Forecast coordinates={coordinates} />
       </main>
     );
   }
