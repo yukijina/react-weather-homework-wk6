@@ -1,4 +1,9 @@
-.App {
+p,
+span {
+  font-size: 1.6rem;
+}
+
+.App-container {
   margin: 5rem auto;
   padding: 5rem;
   max-width: 80rem;
@@ -12,9 +17,23 @@
   text-align: center;
 }
 
-p,
-span {
-  font-size: 1.6rem;
+.App-footer p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #696969;
+}
+
+.App-footer a,
+.App-footer a:link,
+.App-footer a:visited,
+.App-footer a:active {
+  color: #3d74b6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.App-footer a:hover {
+  color: #dc3c22;
 }
 
 @media (max-width: 630px) {
