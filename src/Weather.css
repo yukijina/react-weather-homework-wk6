@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 0.2rem solid rgba(234, 200, 166, 0.301);
 }
 
 .Weather-heading--2 {

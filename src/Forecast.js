@@ -42,6 +42,7 @@ export default function Forecast({ coordinates }) {
               <img
                 src={weatherData.condition.icon_url}
                 alt={weatherData.condition.description}
+                className='Forecast-img'
               />
               <div className='Forecast-temperature'>
                 <p className='Forecast-temperature--max'>

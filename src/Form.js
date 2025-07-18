@@ -50,8 +50,14 @@ export default function Form({ defaultCity }) {
   } else {
     return (
       <main className='Form'>
-        <form onSubmit={handleSubmit}>
-          <input type='text' className='Form-textbox' onChange={handleChange} />
+        <form onSubmit={handleSubmit} className='Form-container'>
+          <input
+            type='text'
+            className='Form-textbox'
+            placeholder='Enter a city...'
+            autoFocus
+            onChange={handleChange}
+          />
           <input type='submit' value='Search' className='Form-search' />
         </form>
         <Weather data={data} />

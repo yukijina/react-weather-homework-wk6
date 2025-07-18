@@ -5,15 +5,22 @@
   margin-top: 3rem;
 }
 
+.Form-container {
+  margin-bottom: 3rem;
+  display: flex;
+}
+
 .Form input {
   font-size: 1.8rem;
 }
 
 .Form-textbox {
   padding: 0.5rem;
-  width: 20rem;
+  width: 30rem;
   height: 4rem;
   margin-right: 0.5rem;
+  background-color: #fbf5de;
+  border: none;
 }
 
 .Form-search {
@@ -22,4 +29,14 @@
   background-color: #3d74b6;
   color: #fdfdfd;
   border-radius: 5px;
+}
+
+@media (max-width: 505px) {
+  .Form-container {
+    justify-content: space-between;
+  }
+
+  .Form-textbox {
+    width: 100%;
+  }
 }

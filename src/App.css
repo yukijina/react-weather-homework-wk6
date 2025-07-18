@@ -1,5 +1,10 @@
 .App {
   margin: 5rem auto;
+  padding: 5rem;
+  max-width: 80rem;
+  background-color: #fdfdfd;
+  border-radius: 1.6rem;
+  box-shadow: 0 3rem 5rem #eac8a6;
 }
 
 .App-heading-1 {
@@ -10,4 +15,14 @@
 p,
 span {
   font-size: 1.6rem;
+}
+
+@media (max-width: 630px) {
+  .App {
+    padding: 5rem 2rem;
+  }
+  p,
+  span {
+    font-size: 1.4rem;
+  }
 }
